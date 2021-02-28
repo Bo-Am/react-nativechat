@@ -1,17 +1,17 @@
 import {combineReducers} from 'redux';
-import {createErrorReducer, createIsCheckingReducer} from './common';
+import {createErrorReducer, createIsFetchingReducer} from './common';
 
 // reducer для сбора ошибок в login, для сокращения записи сделан createErrorReducer
 const createLoginReducer = ()=> 
   combineReducers({
-    isChecking: createIsCheckingReducer('AUTH_LOGIN'),
+    isChecking: createIsFetchingReducer('AUTH_LOGIN'),
     error: createErrorReducer('AUTH_LOGIN')
   })
 
 // reducer для сбора ошибок в register, для сокращения записи сделан createErrorReducer
 const createRegisterReducer = () =>
   combineReducers({
-    isChecking: createIsCheckingReducer('AUTH_REGISTER'),
+    isChecking: createIsFetchingReducer('AUTH_REGISTER'),
     error: createErrorReducer('AUTH_REGISTER')
   })
 
@@ -36,7 +36,7 @@ function createAuthReducer(){
 
   return combineReducers({
     user,
-    isChecking: createIsCheckingReducer('AUTH_ON'),
+    isChecking: createIsFetchingReducer('AUTH_ON'),
     login: createLoginReducer(),
     register: createRegisterReducer()
   })

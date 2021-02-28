@@ -2,6 +2,9 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+  stats: {
+    errorDetails: true
+  },
   mode: 'development',
   entry: './src/js/index.js',
   devtool: 'inline-source-map',
@@ -46,5 +49,3 @@ module.exports = {
     path: path.resolve(__dirname, 'build', 'js'),
   },
 };
-
-

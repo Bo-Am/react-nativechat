@@ -1,5 +1,4 @@
-
-import Storage from '../js/utils/storage'
+import Storage from '../js/utils/storage';
 
 const INITIAL_STATE = {
   isDarkTheme: false,
@@ -9,13 +8,13 @@ const INITIAL_STATE = {
 }
 
 export default function settingsReducer(state = INITIAL_STATE, action) {
-  switch(action.type){
+  switch(action.type) {
     case 'SETTINGS_UPDATE':
       return {...state, [action.setting]: action.value}
     case 'SETTINGS_INITIAL_LOAD':
       const storedSettings = Storage.getItem('app-settings');
       return {...state, ...storedSettings}
-    default: 
+    default:
       return state;
   }
 }
